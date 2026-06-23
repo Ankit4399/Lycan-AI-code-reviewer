@@ -232,24 +232,23 @@ const PRICING = [
     price: { monthly: "$0", annually: "$0" },
     period: { monthly: "forever", annually: "forever" },
     description: "For individual engineers exploring AI review",
-    features: ["Up to 20 reviews / month", "Public & private repos", "Inline GitHub comments", "Community support"],
+    features: ["Up to 10 reviews / month", "Public & private repos", "Inline GitHub comments", "Community support"],
     cta: "Start for free",
     highlighted: false,
   },
   {
     name: "Team",
-    price: { monthly: "$29", annually: "$23" },
+    price: { monthly: "$34", annually: "$26" },
     period: { monthly: "per seat / mo", annually: "per seat / mo" },
     description: "For serious engineering teams shipping fast",
     features: [
       "Unlimited reviews",
-      "Linear & Jira sync",
       "Custom review rules",
       "Security vulnerability triage",
       "Priority review queue",
       "Dedicated support",
     ],
-    cta: "Start 14-day trial",
+    cta: "Buy Credits",
     highlighted: true,
   },
 ];
@@ -1127,7 +1126,7 @@ export default function LycanLandingPage() {
                     : { border: "1px solid #1A1A1A", color: "#A1A1AA", backgroundColor: "transparent" }
                 }
               >
-                {p === "annually" ? "Annual (save 20%)" : "Monthly"}
+                {p === "annually" ? "Annual (save 25%)" : "Monthly"}
               </button>
             ))}
           </div>

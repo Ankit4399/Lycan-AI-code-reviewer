@@ -5,7 +5,7 @@ import { getUserInstallationId } from "@/features/github/server/installation";
 import { prisma } from "@/lib/db";
 import { getUserSubscription } from "./subscription";
 
-export const FREE_MONTHLY_LIMIT = 5;
+export const FREE_MONTHLY_LIMIT = 10;
 
 export type UsageSummary = {
   used: number;
