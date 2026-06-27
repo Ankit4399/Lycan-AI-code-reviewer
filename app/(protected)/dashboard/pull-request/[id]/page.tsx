@@ -9,7 +9,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatDistanceToNow } from "date-fns";
-import { AiReviewMarkdown } from "@/features/pull-requests/components/ai-review-markdown";
 import { PullRequestStatus } from "@/features/pull-requests/types/pull-request";
 import { requireAuth } from "@/features/auth/actions";
 import { getUserInstallationId } from "@/features/github/server/installation";
@@ -18,9 +17,10 @@ import { DashboardHeader } from "@/features/dashboard/components/dashboard-heade
 import { Button } from "@/components/ui/button";
 import { DASHBOARD_ROUTES } from "@/features/dashboard/lib/routes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeftIcon, ArrowSquareOutIcon, RobotIcon, GitBranchIcon, GitPullRequestIcon, UserIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, ArrowSquareOutIcon, RobotIcon, GitBranchIcon, GitPullRequestIcon, UserIcon } from "@phosphor-icons/react/dist/ssr";
 import { statusBadge } from "@/features/dashboard/lib/status-style";
 import { getPrStatusTone, PR_STATUS_LABELS } from "@/features/pull-requests/utils/status";
+import { AiReviewMarkdownWrapper } from "@/features/pull-requests/components/ai-review-markdown-wrapper";
 
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ function ReviewBody({
       );
     }
   
-    return <AiReviewMarkdown review={review} />;
+    return <AiReviewMarkdownWrapper review={review} />;
 }
 
 

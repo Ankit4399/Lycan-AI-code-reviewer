@@ -16,7 +16,7 @@ import type {
   RepoPullRequests,
 } from "@/features/pull-requests/types/pull-request";
 
-import { AiReviewMarkdown } from "@/features/pull-requests/components/ai-review-markdown";
+import { AiReviewMarkdownWrapper } from "@/features/pull-requests/components/ai-review-markdown-wrapper";
 import {
   PR_STATUS_LABELS,
   getPrStatusTone,
@@ -112,7 +112,7 @@ function AiReviewAccordion({ pullRequest }: { pullRequest: PullRequestItem }) {
         </AccordionTrigger>
         <AccordionContent>
           <div className="rounded-none border border-border bg-muted/40 p-3">
-            <AiReviewMarkdown review={pullRequest.reviewComment} />
+            <AiReviewMarkdownWrapper review={pullRequest.reviewComment} />
           </div>
         </AccordionContent>
       </AccordionItem>
