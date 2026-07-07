@@ -1,9 +1,9 @@
 "use client";
 
 import {
-    ArrowSquareOut,
-    GithubLogo,
-    Plugs,
+    ArrowSquareOutIcon,
+    GithubLogoIcon,
+    PlugsIcon,
 } from "@phosphor-icons/react";
 
 import type { GithubInstallationStatus } from "@/features/dashboard/lib/types";
@@ -64,7 +64,7 @@ function ConnectedActions() {
                 variant="outline"
                 className={statusButtonClass.danger}
             >
-                <Plugs />
+                <PlugsIcon />
                 Disconnect GitHub App
             </Button>
         </form>
@@ -78,9 +78,9 @@ function DisconnectedActions({ installUrl }: { installUrl: string }) {
             render={<a href={installUrl} />}
             className={statusButtonClass.success}
         >
-            <GithubLogo />
+            <GithubLogoIcon />
             Install GitHub App
-            <ArrowSquareOut className="size-3 opacity-80" />
+            <ArrowSquareOutIcon className="size-3 opacity-80" />
         </Button>
     );
 }
@@ -150,7 +150,7 @@ export function GithubConnectCard({
                                     iconWrapperClass
                                 )}
                             >
-                                <GithubLogo className="size-5" />
+                                <GithubLogoIcon className="size-5" />
                             </span>
                             <div>
                                 <CardTitle>GitHub App</CardTitle>

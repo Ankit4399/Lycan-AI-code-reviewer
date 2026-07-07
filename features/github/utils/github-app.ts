@@ -19,6 +19,7 @@ export function getGithubInstallUrl(userId : string){
     
     const url = new URL(`https://github.com/apps/lycan-review/installations/new`)
 
+    //So the main purpose of state here is to remember which user initiated the GitHub App installation so you can associate the returned installation_id with the correct account in your application.
     url.searchParams.set("state",userId)
     return url.toString();
 }

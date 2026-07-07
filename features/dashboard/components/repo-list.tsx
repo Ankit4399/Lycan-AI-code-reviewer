@@ -1,5 +1,37 @@
 "use client";
 
+//Page Loads
+//       │
+//       ▼
+// useInfiniteQuery()
+//       │
+//       ▼
+// Fetch first page of repositories
+//       │
+//       ▼
+// Store data in React Query Cache
+//       │
+//       ▼
+// Filter + Search + Sort (useMemo)
+//       │
+//       ▼
+// Render Table
+//       │
+//       ▼
+// User Scrolls
+//       │
+//       ▼
+// Intersection Observer
+//       │
+//       ▼
+// fetchNextPage()
+//       │
+//       ▼
+// Append new repositories
+//       │
+//       ▼
+// Table updates automatically
+
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { formatDistanceToNow } from "date-fns";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -222,3 +254,50 @@ function RepoRow({ repo }: { repo: DashboardRepo }) {
       </TableRow>
     );
   }
+
+
+  
+//COMPLETE DATA FLOW
+// API
+//  │
+//  ▼
+// React Query
+//  │
+//  ▼
+// data.pages
+//  │
+//  ▼
+// Flatten pages (useMemo)
+//  │
+//  ▼
+// Sort by updatedAt
+//  │
+//  ▼
+// repos[]
+//  │
+//  ▼
+// Apply filter (Public/Private)
+//  │
+//  ▼
+// Apply search
+//  │
+//  ▼
+// visibleRepos
+//  │
+//  ▼
+// Map to <RepoRow />
+//  │
+//  ▼
+// Render Table
+
+//                     ▲
+//                     │
+// Intersection Observer
+//                     │
+//                     ▼
+//           fetchNextPage()
+//                     │
+//                     ▼
+//            React Query Cache
+//                     │
+//                     └── UI updates automatically
